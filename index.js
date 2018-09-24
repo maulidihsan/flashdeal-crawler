@@ -1,5 +1,5 @@
 const bukalapakCrawler = require('./crawler');
 
 
-bukalapakCrawler.run(URL)
+bukalapakCrawler.run()
   .then(hasil => console.log(hasil));
