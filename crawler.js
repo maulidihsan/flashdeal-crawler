@@ -39,8 +39,11 @@ const run = async () => {
             result = _.zip(item, images, availability).map(zip => _.object(['item', 'images', 'stocks'], zip))
         }
         const timer = res.result.time.split(':').map(x => x.trim());
-        const timeleft = moment(Date.now()).add(Number(timer[0]), 'h').add(Number(timer[1]), 'm').add(Number(timer[2]), 's');
-        response = result;
+        const timeleft = moment(Date.now()).add(Number(timer[0]), 'h').add(Number(timer[1]), 'm').add(Number(timer[2]), 's').toISOString();
+        response = {
+          time: timeleft,
+          product: result
+        };
       }),
     });
     // Queue a request

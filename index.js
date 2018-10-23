@@ -18,7 +18,7 @@ let proto = grpc.loadPackageDefinition(
 
 const getPromo = (call, callback) => {
   bukalapakCrawler.run()
-    .then(hasil => callback(null, { product: hasil }));
+    .then(hasil => callback(null, { product: hasil.product, time: hasil.time }));
 };
 
 server.addService(proto.api.Promo.service, {
