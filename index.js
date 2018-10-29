@@ -1,7 +1,8 @@
 const fs = require('fs');
 const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
-const bukalapakCrawler = require('./crawler');
+const crawler = require('./service/crawler');
+const MongoClient = require('mongodb').MongoClient;
 const port = process.env.PORT || 5001;
 
 const server = new grpc.Server();
